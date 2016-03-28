@@ -11,54 +11,31 @@ Pod::Spec.new do |s|
 
   s.name         = "MTDomobAdSDK"
   s.version      = "0.1.0"
-  s.summary      = "DomobAdSDK for person"
+  s.summary      = "DomobAdSDK for Person"
 
-  s.description  = <<-DESC
-                   DESC
+  s.homepage     = "http://www.domob.cn/developers/changelog/ios_sdk_changelog.html"
 
-  s.homepage     = "http://EXAMPLE/MTDomobAdSDK"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-  s.license      = "MIT (example)"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license  = {
+    :type => 'Cpoyright',
+    :text => 'LICENSE  ©2016 Domob, Inc. All rights reserved'
+  }
 
 
   s.author             = { "Tim" => "aunm123@yeah.net" }
-  # Or just: s.author    = "Tim"
-  # s.authors            = { "Tim" => "aunm123@yeah.net" }
-  # s.social_media_url   = "http://twitter.com/Tim"
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "5.0"
 
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-  # s.watchos.deployment_target = "2.0"
-  # s.tvos.deployment_target = "9.0"
+  s.source       = { :git => "https://github.com/aunm123/MTDomobAdSDK.git", :tag => "#{s.version}" }
 
-  s.source       = { :git => "http://EXAMPLE/MTDomobAdSDK.git", :tag => "0.0.1" }
+  s.source_files = "*.h"
+  s.public_header_files = "*.h"
+  s.resources = "DomobAdSDKBundle/*.bundle"
+  s.preserve_paths = "*.a"
+  s.framework = 'Foundation','UIKit'
+  s.weak_frameworks = 'CoreMedia','MediaPlayer','QuartzCore','CoreText','CoreGraphics','StoreKit','PassKit','Social','EventKit','AVFoundation','AudioToolbox','SystemConfiguration'
+  s.libraries = 'z','sqlite3','DomobAdSDK'
+  s.requires_arc = true
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
-
-  # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
-
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
-
-
-  # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
-    s.requires_arc = true
-
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+  s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => "$(PODS_ROOT)/#{s.name}" }
 
 end
